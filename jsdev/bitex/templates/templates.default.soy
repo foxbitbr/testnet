@@ -45,6 +45,34 @@
   </ul>
 {/template}
 
+/**
+  * @param label
+  * @param key
+  * @param password
+  * @param secret
+  */
+{template .APIKeyCreatedDialogContent}
+  <p>
+   {msg desc="API Key created dialog description"}The API Key '{{$label}}' has been created successfully. Please make sure to store the credentials below in a secure location.{/msg}
+  </p>
+
+  <dl class="dl-horizontal">
+    <dt>{msg desc="API Key label on API Keycreated dialog"}API Key{/msg}</dt>
+    <dd>{{$key}}</dd>
+    <dt>{msg desc="API Password label on API Keycreated dialog"}API Password{/msg}</dt>
+    <dd>{{$password}}</dd>
+    <dt>{msg desc="API Secret label on API Keycreated dialog"}API Secret{/msg}</dt>
+    <dd>{{$secret}}</dd>
+  </dl>
+
+  <div class="alert alert-error">
+    <strong>{msg desc="Warning message on the API Key created dialog description"}Warning! {/msg}</strong>
+    {msg desc="Warning message on the API Key created dialog description"}
+      The API secret and password will never be displayed again. Make sure you have saved it before closing this window.
+    {/msg}
+  </div>
+{/template}
+
 
 /**
   * @param msg_customer_detail
@@ -142,9 +170,9 @@
     </div>
 
     <div class="control-group">
-      <label class="control-label">{msg desc="Net amount"}Net amount{/msg}</label>
+      <label class="control-label net-amount">{msg desc="Net amount"}Net amount{/msg}</label>
       <div class="controls">
-        <label id="{$netValueID}" class="control-label broker-confirm-deposit-net-amount" style="text-align: left;"></label>
+        <label id="{$netValueID}" class="control-label net-amount broker-confirm-deposit-net-amount" style="text-align: left;"></label>
         <input id="{$netValueID}_value" type="hidden" value="">
       </div>
     </div>
@@ -770,9 +798,9 @@
 </div>
 
 <div class="control-group" style="{if $hideNetValueID}display:none{/if}">
-  <label class="control-label">{msg desc="Net amount"}Net amount{/msg}</label>
+  <label class="control-label net-amount">{msg desc="Net amount"}Net amount{/msg}</label>
   <div class="controls">
-    <label id="{$netValueID}" class="control-label" style="text-align: left;"></label>
+    <label id="{$netValueID}" class="control-label net-amount" style="text-align: left;"></label>
     <input id="{$netValueID}_value" type="hidden" value="">
   </div>
 </div>
@@ -962,10 +990,16 @@
               </div>
 
               <div class="control-group" {if $hideNetAmount} style="display:none;" {/if} >
-                <label class="control-label">{msg desc="Net amount"}Net amount{/msg}</label>
+                <label class="control-label net-amount">{msg desc="Net amount"}Net amount{/msg}</label>
                 <div class="controls">
-                  <label id="{$method['method']}_{$netValueID}" class="control-label" style="text-align: left;"></label>
+                  <label id="{$method['method']}_{$netValueID}" class="control-label net-amount" style="text-align: left;"></label>
                   <input id="{$method['method']}_{$netValueID}_value" type="hidden" value="">
+                  <input id="{$method['method']}_{$netValueID}_validator" type="hidden" value=""
+                      data-uniform-validators="required; validateNumber {if $method['limits'][$verificationLevel]['enabled']} {if $method['limits'][$verificationLevel]['min']}; validateMin {$method['limits'][$verificationLevel]['formatted_min_value'] }{/if}{if $method['limits'][$verificationLevel]['max']}; validateMax {$method['limits'][$verificationLevel]['formatted_max_value'] } {/if} {/if}"
+                      data-uniform-type="number"
+                      class="withdraw-field"
+                      data-uniform-filters="positive_number"
+                      {if not isFirst($method)}disabled{/if}>
                 </div>
               </div>
 
@@ -1043,10 +1077,16 @@
             </div>
 
             <div class="control-group" {if $hideNetAmount} style="display:none;" {/if}>
-              <label class="control-label">{msg desc="Net amount"}Net amount{/msg}</label>
+              <label class="control-label net-amount">{msg desc="Net amount"}Net amount{/msg}</label>
               <div class="controls">
-                <label id="{$method['method']}_{$netValueID}" class="control-label broker-confirm-deposit-net-amount" style="text-align: left;"></label>
+                <label id="{$method['method']}_{$netValueID}" class="control-label net-amount broker-confirm-deposit-net-amount" style="text-align: left;"></label>
                 <input id="{$method['method']}_{$netValueID}_value" type="hidden" value="">
+                <input id="{$method['method']}_{$netValueID}_validator" type="hidden" value=""
+                    data-uniform-validators="required; validateNumber {if $method['limits'][$verificationLevel]['enabled']} {if $method['limits'][$verificationLevel]['min']}; validateMin {$method['limits'][$verificationLevel]['formatted_min_value'] }{/if}{if $method['limits'][$verificationLevel]['max']}; validateMax {$method['limits'][$verificationLevel]['formatted_max_value'] } {/if} {/if}"
+                    data-uniform-type="number"
+                    class="withdraw-field"
+                    data-uniform-filters="positive_number"
+                    {if not isFirst($method)}disabled{/if}>
               </div>
             </div>
 

@@ -1,7 +1,7 @@
 goog.provide('bitex.view.AccountOverview');
 
 goog.require('bitex.view.View');
-
+goog.require('bitex.ui.Dialog');
 goog.require('bitex.ui.WithdrawList');
 goog.require('bitex.ui.DepositList');
 goog.require('bitex.templates');
@@ -278,7 +278,7 @@ bitex.view.AccountOverview.prototype.formatVerificationData_ = function(raw_veri
         } else if (key == 'uploaded_files') {
           if (goog.isArray(data)) {
             goog.array.forEach(data, function(data_line) {
-              if ( goog.isDefAndNotNull(data_line.match(/\.(jpg|jpeg|png|gif)$/))) {
+              if ( goog.isDefAndNotNull(data_line.match(/\.(JPG|JPEG|PNG|GIF|jpg|jpeg|png|gif)$/))) {
                 formatted_data += ' <a href="#" data-action="file-view" data-filename="' + data_line + '" class="btn btn-mini btn-info" >' +
                     '<i data-action="file-view" data-filename="' + data_line + '"  class="icon-white icon-eye-open"></i></a> ';
               } else {
@@ -697,7 +697,7 @@ bitex.view.AccountOverview.prototype.onBtnUserFeesClick_ = function(e) {
 
   var userFeesDialog = this.getApplication().showDialog(dlg_content,
                                                    MSG_USER_FEES_DIALOG_TITLE,
-                                                   bootstrap.Dialog.ButtonSet.createOkCancel());
+                                                   bitex.ui.Dialog.ButtonSet.createOkCancel());
 
   if (goog.isDefAndNotNull(buy_fee)) {
     goog.dom.getElement('id_user_fees_buy_fee').disabled = false;
@@ -880,7 +880,7 @@ bitex.view.AccountOverview.prototype.onAccountOverviewHeaderClick_ = function(e)
 
         var dlg = this.getApplication().showDialog(dlg_content,
                                                    MSG_VERIFICATION_DATA_DIALOG_TITLE,
-                                                   bootstrap.Dialog.ButtonSet.createOkCancel());
+                                                   bitex.ui.Dialog.ButtonSet.createOkCancel());
         handler.listen(dlg, goog.ui.Dialog.EventType.SELECT, function(e) {
           if (e.key == 'ok') {
             e.preventDefault();
