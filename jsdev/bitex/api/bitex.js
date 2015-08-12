@@ -15,6 +15,8 @@ goog.require('goog.events');
 goog.require('goog.events.Event');
 goog.require('goog.events.EventTarget');
 
+goog.require('goog.userAgent');
+
 /**
  * @constructor
  * @param {number} opt_browser_finger_print
@@ -26,6 +28,7 @@ bitex.api.BitEx = function( opt_browser_finger_print  ){
   this.currency_info_         = null;
   this.all_markets_           = null;
   this.browser_finger_print_  = opt_browser_finger_print;
+  this.stunt_ip_info_         = {'local':undefined, 'public':[]};
 
 
   this.ws_ = new goog.net.WebSocket(true);
@@ -38,6 +41,12 @@ goog.inherits(bitex.api.BitEx, goog.events.EventTarget);
  * @private
  */
 bitex.app.BitEx.prototype.currency_info_;
+
+/**
+ * @type {Object}
+ * @private
+ */
+bitex.app.BitEx.prototype.stunt_ip_info_;
 
 /**
  * @type {Object}
@@ -142,10 +151,6 @@ bitex.api.BitEx.EventType = {
   HEARTBEAT: 'heartbeat',
   EXECUTION_REPORT: 'execution_report',
 
-  /* Trusted Address Management */
-  SUGGEST_TRUSTED_ADDRESS_RESPONSE: 'suggest_trusted_address_response',
-  SUGGEST_TRUSTED_ADDRESS_PUBLISH: 'suggest_trusted_address_pub',
-
   /* Securities */
   SECURITY_LIST: 'security_list',
   SECURITY_STATUS: 'security_status',
@@ -155,8 +160,11 @@ bitex.api.BitEx.EventType = {
   TRADE_HISTORY_RESPONSE: 'trade_history_response',
 
   TRADERS_RANK_RESPONSE: 'traders_rank',
-
   LEDGER_LIST_RESPONSE: 'ledger_list',
+
+  API_KEY_LIST_RESPONSE: 'api_key_list_response',
+  API_KEY_REVOKE_RESPONSE: 'api_key_revoke_response',
+  API_KEY_CREATE_RESPONSE : 'api_key_create_response',
 
   /* Brokers */
   BROKER_LIST_RESPONSE: 'broker_list',
@@ -169,6 +177,11 @@ bitex.api.BitEx.EventType = {
   MARKET_DATA_FULL_REFRESH : 'md_full_refresh',
   MARKET_DATA_INCREMENTAL_REFRESH: 'md_incremental_refresh',
   MARKET_DATA_REQUEST_REJECT: 'md_request_reject',
+
+  LINE_OF_CREDIT_LIST_RESPONSE: 'loc_list_response',
+  LINE_OF_CREDIT_LIST_RESPONSE: 'loc_list_refresh',
+  GET_LINE_OF_CREDIT_RESPONSE: 'get_loc_response',
+  PAY_LINE_OF_CREDIT_RESPONSE: 'pay_loc_response',
 
   TRADING_SESSION_STATUS: 'md_status',
   TRADE: 'trade',
@@ -550,14 +563,40 @@ bitex.api.BitEx.prototype.onMessage_ = function(e) {
       this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.POSITION_RESPONSE, msg ) );
       break;
 
-    case 'U45': // Suggest Trusted Address Response
-      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.SUGGEST_TRUSTED_ADDRESS_RESPONSE + '.' + msg['SuggestTrustedAddressReqID'], msg) );
-      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.SUGGEST_TRUSTED_ADDRESS_RESPONSE, msg ) );
+    case 'U51': // APIKeyList Response
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.API_KEY_LIST_RESPONSE + '.' + msg['APIKeyListReqID'], msg) );
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.API_KEY_LIST_RESPONSE, msg ) );
       break;
 
-    case 'U46': // Suggest Trusted Address Publish
-      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.SUGGEST_TRUSTED_ADDRESS_PUBLISH + '.' + msg['SuggestTrustedAddressReqID'], msg) );
-      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.SUGGEST_TRUSTED_ADDRESS_PUBLISH, msg ) );
+    case 'U53': // APIKeyCreate Response
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.API_KEY_CREATE_RESPONSE + '.' + msg['APIKeyCreateReqID'], msg) );
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.API_KEY_CREATE_RESPONSE, msg ) );
+      break;
+
+    case 'U55': // APIKeyRevoke Response
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.API_KEY_REVOKE_RESPONSE + '.' + msg['APIKeyRevokeReqID'], msg) );
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.API_KEY_REVOKE_RESPONSE, msg ) );
+      break;
+
+    case 'U57': // Get Credit Line Of Credit Response
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.GET_LINE_OF_CREDIT_RESPONSE + '.' + msg['GetCreditLineOfCreditReqID'], msg) );
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.GET_LINE_OF_CREDIT_RESPONSE, msg ) );
+      break;
+
+    case 'U59': // Pay Credit Line Of Credit Response
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.PAY_LINE_OF_CREDIT_RESPONSE + '.' + msg['PayCreditLineOfCreditReqID'], msg) );
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.PAY_LINE_OF_CREDIT_RESPONSE, msg ) );
+      break;
+
+    case 'U61': // Line of Credit List Response
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.LINE_OF_CREDIT_LIST_RESPONSE + '.' + msg['LineOfCreditListReqID'], msg) );
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.LINE_OF_CREDIT_LIST_RESPONSE, msg ) );
+      break;
+
+    case 'U65': // Line Of Credit Refresh
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.LINE_OF_CREDIT_LIST_REFRESH + '.' + msg['ProviderID'], msg ) );
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.LINE_OF_CREDIT_LIST_REFRESH + '.' + msg['TakerID'], msg ) );
+      this.dispatchEvent( new bitex.api.BitExEvent( bitex.api.BitEx.EventType.LINE_OF_CREDIT_LIST_REFRESH, msg ) );
       break;
 
     case 'B1': // Process Deposit Response
@@ -706,13 +745,22 @@ bitex.api.BitEx.prototype.close = function(){
  */
 bitex.api.BitEx.prototype.login = function(brokerID, username, password, opt_second_factor, opt_request_id ){
   var reqId = opt_request_id || parseInt(Math.random() * 1000000, 10);
+
+  var userAgent = goog.userAgent.getUserAgentString();
+  var userAgentLanguage = goog.global.navigator.language;
+  var userAgentTimezoneOffset = new Date().getTimezoneOffset();
+
   var msg = {
     'MsgType': 'BE',
     'UserReqID': reqId,
     'BrokerID': brokerID,
     'Username': username,
     'Password': password,
-    'UserReqTyp': '1'
+    'UserReqTyp': '1',
+    'UserAgent': userAgent,
+    'UserAgentLanguage': userAgentLanguage,
+    'UserAgentTimezoneOffset': userAgentTimezoneOffset,
+    'UserAgentPlatform': goog.global.navigator.platform
   };
   if (goog.isDefAndNotNull(opt_second_factor)) {
     msg['SecondFactor'] = opt_second_factor;
@@ -958,27 +1006,6 @@ bitex.api.BitEx.prototype.requestDepositList = function(opt_requestId, opt_page,
 
   this.sendMessage(msg);
 
-  return requestId;
-};
-
-/**
- *
- * @param {string} address
- * @param {string} currency
- * @param {string} label
- * @param {number=} opt_requestId
- */
-bitex.api.BitEx.prototype.confirmTrustedAddressRequest = function(address, currency, label ,opt_requestId) {
-  var requestId = opt_requestId || parseInt( 1e7 * Math.random() , 10 );
-
-  var msg = {
-    'MsgType': 'U44',
-    'ConfirmTrustedAddressReqID': requestId,
-    'Address': address,
-    'Currency': currency,
-    'Label': label
-  };
-  this.sendMessage(msg);
   return requestId;
 };
 
@@ -1418,15 +1445,17 @@ bitex.api.BitEx.prototype.unSubscribeSecurityStatus = function(market_data_id){
 
 
 /**
+ * @param {string} opt_market. Defaults to BLINK
  * @param {string} opt_requestId. Defaults to random generated number
  */
-bitex.api.BitEx.prototype.requestSecurityList = function(opt_requestId){
+bitex.api.BitEx.prototype.requestSecurityList = function(opt_market, opt_requestId){
   var requestId = opt_requestId || parseInt( 1e7 * Math.random() , 10 );
-
+  var market = opt_market || "BLINK";
   var msg = {
     'MsgType': 'x',
     'SecurityReqID': requestId,
     'SecurityListRequestType': 0, // Symbol
+    'Market': market,
     'SecurityRequestResult': 0
   };
   this.sendMessage(msg);
@@ -1444,6 +1473,11 @@ bitex.api.BitEx.prototype.requestSecurityList = function(opt_requestId){
  */
 bitex.api.BitEx.prototype.signUp = function(username, password, email, state, country_code, broker, opt_requestId) {
   var requestId = opt_requestId || parseInt( 1e7 * Math.random() , 10 );
+
+  var userAgent = goog.userAgent.getUserAgentString();
+  var userAgentLanguage = goog.global.navigator.language;
+  var userAgentTimezoneOffset = new Date().getTimezoneOffset();
+
   var msg = {
     'MsgType': 'U0',
     'UserReqID': requestId,
@@ -1452,7 +1486,11 @@ bitex.api.BitEx.prototype.signUp = function(username, password, email, state, co
     'Email': email,
     'State': state,
     'CountryCode': country_code,
-    'BrokerID': broker
+    'BrokerID': broker,
+    'UserAgent': userAgent,
+    'UserAgentLanguage': userAgentLanguage,
+    'UserAgentTimezoneOffset': userAgentTimezoneOffset,
+    'UserAgentPlatform': goog.global.navigator.platform
   };
   this.sendMessage(msg);
 };
@@ -1524,14 +1562,19 @@ bitex.api.BitEx.prototype.requestDeposit = function( opt_requestId, opt_depositO
 
 /**
  * Request Deposit Options
+ * @param {number=} opt_broker_id Defaults to the current user broker ID
  * @param {number=} opt_requestId. Defaults to random generated number
  */
-bitex.api.BitEx.prototype.requestDepositMethods = function( opt_requestId ) {
+bitex.api.BitEx.prototype.requestDepositMethods = function(opt_broker_id, opt_requestId ) {
   var requestId = opt_requestId || parseInt( 1e7 * Math.random() , 10 );
   var msg = {
     'MsgType': 'U20',
     'DepositMethodReqID': requestId
   };
+  if (goog.isDefAndNotNull(opt_broker_id)){
+    msg['BrokerID'] = opt_broker_id;
+  }
+
   this.sendMessage(msg);
 };
 
@@ -1662,12 +1705,23 @@ bitex.api.BitEx.prototype.sendRawMessage  = function(msg) {
 };
 
 /**
+ * @param {Object} stunt_ip_info
+ */
+bitex.api.BitEx.prototype.setSTUNTIp = function(stunt_ip_info) {
+  this.stunt_ip_info_ = stunt_ip_info;
+};
+
+/**
  * @param {Object} msg
  */
 bitex.api.BitEx.prototype.sendMessage  = function(msg) {
   if (goog.isDefAndNotNull(this.browser_finger_print_)) {
     msg['FingerPrint'] = this.browser_finger_print_;
   }
+  if (goog.isDefAndNotNull(this.stunt_ip_info_)) {
+    msg['STUNTIP'] = this.stunt_ip_info_;
+  }
+
   this.sendRawMessage(JSON.stringify(msg));
 };
 
@@ -1732,6 +1786,170 @@ bitex.api.BitEx.prototype.testRequest = function(opt_requestId){
   this.sendMessage( msg );
 };
 
+
+/**
+ * Requests the list of all API Keys
+ * @param {number=} opt_page. Defaults to 0
+ * @param {number=} opt_limit. Defaults to 100
+ * @param {number|string=} opt_requestId
+ */
+bitex.api.BitEx.prototype.requestAPIKeyList = function(opt_page, opt_limit, opt_requestId){
+  var requestId = opt_requestId || parseInt( 1e7 * Math.random() , 10 );
+  var page = opt_page || 0;
+  var limit = opt_limit || 100;
+
+  var msg = {
+    'MsgType': 'U50',
+    'APIKeyListReqID': requestId,
+    'Page': page,
+    'PageSize': limit
+  };
+
+  this.sendMessage(msg);
+
+  return requestId;
+};
+
+/**
+ * Requests the creation of a new API Key
+ * @param {string} label
+ * @param {<Object.<string,Array.<string>>} permission_list
+ * @param {Array.<string>} ip_white_list
+ * @param {boolean=} opt_revocable  Defaults to true
+ * @param {number=} opt_requestId
+ * @returns {number}
+ */
+bitex.api.BitEx.prototype.requestCreateAPIKey = function(label, permission_list, ip_white_list, opt_revocable, opt_requestId){
+  var requestId = opt_requestId || parseInt( 1e7 * Math.random() , 10 );
+  var revocable = true;
+  if (goog.isDefAndNotNull(opt_revocable)){
+    revocable = opt_revocable;
+  }
+
+
+  var msg = {
+    'MsgType': 'U52',
+    'APIKeyCreateReqID': requestId,
+    'Label': label,
+    'PermissionList': permission_list,
+    'IPWhiteList': ip_white_list,
+    'Revocable': revocable
+  };
+
+  this.sendMessage(msg);
+
+  return requestId;
+};
+
+/**
+ * Revokes a previous generated api key.
+ * @param {string} api_key
+ * @param {number=} opt_requestId
+ * @returns {number}
+ */
+bitex.api.BitEx.prototype.revokeAPIKey = function(api_key, opt_requestId){
+  var requestId = opt_requestId || parseInt( 1e7 * Math.random() , 10 );
+
+  var msg = {
+    'MsgType': 'U54',
+    'APIKeyRevokeReqID': requestId,
+    'APIKey': api_key
+  };
+
+  this.sendMessage(msg);
+
+  return requestId;
+};
+
+/**
+ * Requests the list of all API Keys
+ * @param {number=} opt_page. Defaults to 0
+ * @param {number=} opt_limit. Defaults to 100
+ * @param {number|string=} opt_requestId
+ */
+bitex.api.BitEx.prototype.requestLineOfCreditList = function(opt_page, opt_limit, opt_requestId){
+  var requestId = opt_requestId || parseInt( 1e7 * Math.random() , 10 );
+  var page = opt_page || 0;
+  var limit = opt_limit || 100;
+
+  var msg = {
+    'MsgType': 'U60',
+    'LineOfCreditListReqID': requestId,
+    'Page': page,
+    'PageSize': limit
+  };
+
+  this.sendMessage(msg);
+
+  return requestId;
+};
+
+/**
+ * @param {string} line_of_credit_id
+ * @param {number} amount
+ * @param {string} delivery_currency
+ * @param {number|string=} opt_requestId
+ */
+bitex.api.BitEx.prototype.getLineOfCredit = function(line_of_credit_id, amount, delivery_currency, opt_requestId) {
+  var requestId = opt_requestId || parseInt( 1e7 * Math.random() , 10 );
+  var msg = {
+    'MsgType': 'U56',
+    'GetCreditLineOfCreditReqID': requestId,
+    'LineOfCreditID': line_of_credit_id,
+    'Amount': amount,
+    'DeliveryCurrency': delivery_currency
+  };
+
+  this.sendMessage(msg);
+
+  return requestId;
+};
+
+/**
+ * @param {string} line_of_credit_id
+ * @param {number} amount
+ * @param {string} currency
+ * @param {number|string=} opt_requestId
+ */
+bitex.api.BitEx.prototype.payLineOfCredit = function(line_of_credit_id, amount, currency, opt_requestId) {
+  var requestId = opt_requestId || parseInt( 1e7 * Math.random() , 10 );
+  var msg = {
+    'MsgType': 'U58',
+    'PayCreditLineOfCreditReqID': requestId,
+    'LineOfCreditID': line_of_credit_id,
+    'Amount': amount,
+    'Currency': currency
+  };
+
+  this.sendMessage(msg);
+
+  return requestId;
+};
+
+/**
+ * @param {string} line_of_credit_id
+ * @param {boolean=} opt_enable Defaults to true
+ * @param {number|string=} opt_requestId
+ */
+bitex.api.BitEx.prototype.enableLineOfCredit = function(line_of_credit_id, opt_enable, opt_requestId) {
+  var requestId = opt_requestId || parseInt( 1e7 * Math.random() , 10 );
+  var enable = true;
+  if (goog.isDefAndNotNull(opt_enable) && (opt_enable === false || opt_enable === 0)) {
+    enable = false;
+  }
+
+  var msg = {
+    'MsgType': 'U62',
+    'EnableCreditLineOfCreditReqID': requestId,
+    'Enable': enable
+  };
+
+  this.sendMessage(msg);
+
+  return requestId;
+};
+
+
 /**
  *
  * @param {string} type
@@ -1757,6 +1975,7 @@ goog.exportProperty(BitEx.prototype, 'close', bitex.api.BitEx.prototype.close);
 goog.exportProperty(BitEx.prototype, 'login', bitex.api.BitEx.prototype.login);
 goog.exportProperty(BitEx.prototype, 'isLogged', bitex.api.BitEx.prototype.isLogged);
 goog.exportProperty(BitEx.prototype, 'isConnected', bitex.api.BitEx.prototype.isConnected);
+goog.exportProperty(BitEx.prototype, 'setSTUNTIp', bitex.api.BitEx.prototype.setSTUNTIp);
 
 goog.exportProperty(BitEx.prototype, 'changePassword', bitex.api.BitEx.prototype.changePassword);
 goog.exportProperty(BitEx.prototype, 'enableTwoFactor', bitex.api.BitEx.prototype.enableTwoFactor);
@@ -1798,5 +2017,16 @@ goog.exportProperty(BitEx.prototype, 'sendBuyLimitedOrder', bitex.api.BitEx.prot
 goog.exportProperty(BitEx.prototype, 'sendSellLimitedOrder', bitex.api.BitEx.prototype.sendSellLimitedOrder);
 
 goog.exportProperty(BitEx.prototype, 'testRequest', bitex.api.BitEx.prototype.testRequest);
+
+goog.exportProperty(BitEx.prototype, 'requestAPIKeyList', bitex.api.BitEx.prototype.requestAPIKeyList);
+goog.exportProperty(BitEx.prototype, 'requestCreateAPIKey', bitex.api.BitEx.prototype.requestCreateAPIKey);
+goog.exportProperty(BitEx.prototype, 'revokeAPIKey', bitex.api.BitEx.prototype.revokeAPIKey);
+
+goog.exportProperty(BitEx.prototype, 'requestLineOfCreditList', bitex.api.BitEx.prototype.requestLineOfCreditList);
+goog.exportProperty(BitEx.prototype, 'getLineOfCredit', bitex.api.BitEx.prototype.getLineOfCredit);
+goog.exportProperty(BitEx.prototype, 'payLineOfCredit', bitex.api.BitEx.prototype.payLineOfCredit);
+goog.exportProperty(BitEx.prototype, 'enableLineOfCredit', bitex.api.BitEx.prototype.enableLineOfCredit);
+
+
 goog.exportProperty(BitEx.prototype, 'addEventListener', bitex.api.BitEx.prototype.addEventListener);
 goog.exportProperty(BitEx.prototype, 'removeEventListener', bitex.api.BitEx.prototype.removeEventListener);
