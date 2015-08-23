@@ -1,6 +1,5 @@
 # Site settings
-#url: "https://testnet.foxbit.exchange"
-url: "//localhost"
+url: "https://testnet.foxbit.exchange"
 author: "BlinkTrade"
 baseurl: ""
 deploy_version: "HEAD"
