@@ -1,9 +1,284 @@
----
-layout:                 application.coinage
-title:                  Blinktrade demo exchange
-body_classes:           ws-not-connected bitex-not-logged active-view-start
-load_application:       True
----
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title> FoxBit - Compre e venda Bitcoins no Brasil </title>
+
+  <!-- Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="BlinkTrade">
+
+  
+  
+  <meta name="description" content="Compre e venda bitcoins no Brasil de maneira segura através da FoxBit. Com o FoxBit você pode começar a comprar e vender bitcoins hoje. O processo de registro dura menos de um minuto.">
+  <meta name="keywords" content="Compra e venda de bitcoins no Brasil, bolsa de bitcoins no Brasil, venda bitcoins no Brasil, compre bitcoins no Brasil">
+  <meta property="og:title" content="FoxBit - Compre e venda Bitcoins no Brasil">
+  <meta property="og:description" content="Compre e venda bitcoins no Brasil de maneira segura através da FoxBit. Com o FoxBit você pode começar a comprar e vender bitcoins hoje. O processo de registro dura menos de um minuto.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://testnet.foxbit.exchange/themes/coinage/index.html">
+  <meta property="og:image" content="https://testnet.foxbit.exchange/assets/exchange_logos/foxbit_social_network_share.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://testnet.foxbit.exchange/themes/coinage/index.html">
+  <meta property="og:image" content="https://testnet.foxbit.exchange/assets/exchange_logos/foxbit_social_network_share.png">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/exchange_logos/foxbit_favicon.ico">
+  <link rel="icon" href="/assets/exchange_logos/foxbit_favicon.ico" type="image/x-icon">
+
+  <!-- Feed -->
+  <link rel="alternate" type="application/rss+xml" href="https://testnet.foxbit.exchange/feed.xml">
+
+  <meta charset="utf-8">
+
+  <link rel="canonical" href="https://testnet.foxbit.exchange/themes/coinage/index.html"/>
+  <script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+
+  
+  <link href="https://testnet.foxbit.exchange/assets/themes/default/css/style-new.css?v=1e148e6" rel="stylesheet">
+  <link href="https://testnet.foxbit.exchange/assets/css/flag-icon.css" rel="stylesheet">
+
+  
+    <link href="https://testnet.foxbit.exchange/assets/themes/coinage/sass/main.demo.css?v=1e148e6" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="https://testnet.foxbit.exchange/assets/themes/coinage/css/font-awesome.min.css">
+  <script data-cfasync="false" src="https://testnet.foxbit.exchange/assets/js/bitex_app_blink_trade.compiled.pt_BR.coinage.js?v=1e148e6" type="text/javascript"></script>
+  
+</head>
+<body class=" ws-not-connected bitex-not-logged active-view-start ">
+
+<!-- .head -->
+<header class="head">
+    <!-- .head-top -->
+    <div class="head-top">
+        <!-- .container-fluid -->
+        <div class="container">
+            <!-- .head-ticker -->
+            <ul class="head-ticker">
+                <li>
+                    <span class="head-ticker__title">
+                        <i class="glyphicon glyphicon-triangle-top"></i> LAST&nbsp;
+                    </span>
+                    <span class="head-ticker__value">
+                        PHP 11,090.16
+                    </span>
+                </li>
+                <li>
+                    <span class="head-ticker__title">
+                        <i class="glyphicon glyphicon-triangle-top"></i> HIGHT&nbsp;
+                    </span>
+                    <span class="head-ticker__value">
+                        PHP 13,441.61
+                    </span>
+                </li>
+                <li>
+                    <span class="head-ticker__title">
+                        <i class="glyphicon glyphicon-triangle-bottom"></i> LOW&nbsp;
+                    </span>
+                    <span class="head-ticker__value">
+                        PHP 9,950.00
+                    </span>
+                </li>
+            </ul>
+            <!-- /.head-ticker -->
+
+            <ul class="head-top-nav navbar-right">
+              <!-- .head-market -->
+              <li>
+                <a data-switch-view="market" href="#" class="head-top-button">
+                    <i class="glyphicon glyphicon-stats"></i> Mercado
+                </a>
+              </li>
+              <!-- /.head-market -->
+              <!-- .head-language -->
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle head-top-button" data-toggle="dropdown" role="button" aria-expanded="false" style="padding:13.5px">
+                    <span class="flag-icon flag-icon-pt_BR"></span> <b class="caret"></b></a>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="drop1" style="min-width:60px;max-width:61px">
+                
+                  
+                
+                  
+                    
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="https://testnet.foxbit.exchange/en_US">
+                        <span class="flag-icon flag-icon-en_US"></span></a></li>
+                    
+                  
+                
+                  
+                    
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="https://testnet.foxbit.exchange/es">
+                        <span class="flag-icon flag-icon-es"></span></a></li>
+                    
+                  
+                
+                  
+                    
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="https://testnet.foxbit.exchange/ro">
+                        <span class="flag-icon flag-icon-ro"></span></a></li>
+                    
+                  
+                
+                  
+                    
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="https://testnet.foxbit.exchange/zn_CN">
+                        <span class="flag-icon flag-icon-zn_CN"></span></a></li>
+                    
+                  
+                
+                  
+                    
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="https://testnet.foxbit.exchange/vi">
+                        <span class="flag-icon flag-icon-vi"></span></a></li>
+                    
+                  
+                
+                </ul>
+              </li>
+              <!-- /.head-language -->
+            </ul>
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.head-top -->
+
+    <!-- .navbar -->
+    <nav id="id_toolbar" class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          
+          <a class="navbar-brand" href="#" data-switch-view="offerbook">
+              <img data-switch-view="offerbook" class="logo__img" 
+              src="/assets/exchange_logos/foxbit_inverse_toolbar_logo.png"
+              style=" height: 30px; margin-top: -5px; ">
+          </a>
+          
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="bitex-display-if-logged">
+                <!-- .balance -->
+                <div class="balance" id="id_account_summary_content"></div>
+                <!-- /.balance -->
+            </li>
+            <li class="bitex-display-if-logged dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <img class="thumb thumb-p" src="https://testnet.foxbit.exchange/assets/themes/coinage/img/coinage-avatar.png" />
+                <span class="bitex-model bitex-view-title" data-model-key="DisplayName"></span>
+                <span class="caret"></span>
+              </a>
+              <div class="dropdown-arrow"></div>
+              <ul class="dropdown-menu" role="menu" style="min-width: 220px;">
+                  <li class="dropdown-account" role="presentation" data-switch-view="profile">
+                      <a href="#" data-switch-view="profile">
+                        <div class="row">
+                          <div class="col-xs-4">
+                            <img class="thumb thumb-g" src="https://testnet.foxbit.exchange/assets/themes/coinage/img/coinage-avatar.png" />
+                          </div>
+                          <div class="col-xs-8">
+                            <strong class="bitex-model bitex-view-title" data-switch-view="profile" data-model-key="DisplayName"></strong>
+                            <br>
+                            <small style="line-height: 1;">(<span class="bitex-model bitex-view-title" data-model-key="PseudoName"></span>)</small>
+                          </div>
+                        </div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" data-switch-view="my_broker">
+                         Sobre a exchange
+                      </a>
+                  </li>
+                  <li class="bitex-display-if-broker">
+                    <a href="#" data-switch-view="deposit_requests">
+                      Depósitos ( clientes )
+                    </a>
+                  </li>
+                  <li class="bitex-display-if-broker">
+                    <a href="#" data-switch-view="withdraw_requests">
+                      Saques ( clientes )
+                    </a>
+                  </li>
+                  <li>
+                      <a href="#" data-switch-view="deposit">
+                         Depósitos
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" data-switch-view="withdraw">
+                         Saques
+                      </a>
+                  </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="javascript:location.reload();">
+                        <i class="glyphicon glyphicon-off"></i> Sair
+                    </a>
+                </li>
+              </ul>
+            </li>
+            <li class="bitex-hide-if-logged">
+              <button class="btn btn-outline btn-signup" href="#" data-switch-view="signup">
+                  Registrar
+              </button>
+            </li>
+            <li class="bitex-hide-if-logged">
+              <button class="btn btn-primary btn-signin" href="#" data-switch-view="signin">
+                  Login
+              </button>
+            </li>
+
+            <li class="bitex-hide-if-ws-connected">
+                <button href="#" id="id_button_connect_ws" class="btn btn-outline">
+                    <i class="glyphicon glyphicon-repeat"></i> Connect
+                </button>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+        
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="alert-box bitex-display-if-logged">
+        <div class="alert | bitex-model" style="display: none" data-model-key="IsMissingVerification" data-model-action="show_element">
+            <div class="container">
+                <button type="button" class="close pull-right" data-dismiss="alert">&times;</button>
+                <a href="" class="alert-link" data-switch-view="verification"> Verifique a sua conta enviando seus documentos. </a>
+            </div>
+        </div>
+
+        <div class="alert alert-success | bitex-model" style="display: none" data-model-key="TwoFactorEnabled" data-model-action="hide_element">
+            <div class="container">
+                <button type="button" class="close pull-right" data-dismiss="alert">&times;</button>
+                <a href="" class="alert-link" data-switch-view="profile"> Você pode aumentar a segurança da sua conta apenas habilitando a autenticação em dois passos </a>
+            </div>
+        </div>
+
+        <div class="alert alert-danger | bitex-model" style="display: none" data-model-key="IsAccountBlocked" data-model-action="show_element">
+            <div class="container">
+                <button type="button" class="close pull-right" data-dismiss="alert">&times;</button>
+                <a href="" class="alert-link" data-switch-view="faq"> A sua conta foi congelada pelo administrador, por favor contate o suporte. </a>
+            </div>
+        </div>
+    </div>
+    <!-- /.navbar -->
+</header>
+<!-- /.head -->
+
+
 
 <!-- .container-fluid -->
 <div class="background">
@@ -13,21 +288,21 @@ load_application:       True
       <!-- .home -->
       <div class="home">
         <!-- .home-banner -->
-        <div class="home-banner" style="background-image: url({{ site.url }}{{ site.baseurl }}/assets/themes/coinage/img/home-banner-{{site.exchange}}.png)">
+        <div class="home-banner" style="background-image: url(https://testnet.foxbit.exchange/assets/themes/coinage/img/home-banner-foxbit.png)">
             <!-- .home-banner__table -->
             <div class="home-banner__table">
-                {% if site.video == 'true' %}
+                
                 <div class="home-overlay"></div>
                 <div class="home-media">
-                    <video autoplay loop muted="true" poster="{{ site.url }}{{ site.baseurl }}/assets/themes/coinage/img/{{ site.exchange }}-video-fallback.png">
-                        <source src="{{ site.url }}{{ site.baseurl }}/assets/themes/coinage/img/{{ site.exchange }}_video.webm"></source>
+                    <video autoplay loop muted="true" poster="https://testnet.foxbit.exchange/assets/themes/coinage/img/foxbit-video-fallback.png">
+                        <source src="https://testnet.foxbit.exchange/assets/themes/coinage/img/foxbit_video.webm"></source>
                     </video>
                 </div>
-                {% endif %}
+                
                 <!-- .home-banner__cell -->
                 <div class="home-banner__cell">
-                    {% assign lead = "exchanges." | append: site.exchange | append: ".lead" %}
-                    <h1 class="home-banner__title">{% t lead %}</h1>
+                    
+                    <h1 class="home-banner__title">Compre e Venda seus bitcoins de maneira segura e rápida.</h1>
 
                     <!-- .home-->
                     <div class="col-xs-8 col-md-6 col-xs-offset-3">
@@ -37,12 +312,12 @@ load_application:       True
                             <div class="col-md-3 col-xs-12">
                               <a id="id_landing_signin" style="display:none"></a>
                               <a href="#" data-switch-view="signup" class="btn btn-primary btn-block btn-lg" style="text-transform:uppercase">
-                                {% t views.toolbar.signup %}
+                                Registrar
                               </a>
                             </div>
                             <div class="col-md-3 col-xs-12">
                               <a data-switch-view="signin" class="btn btn-lg btn-block btn-outline-white" style="text-transform:uppercase">
-                                {% t views.toolbar.signin %}
+                                Login
                               </a>
                             </div>
                           </div>
@@ -67,30 +342,30 @@ load_application:       True
                         <!-- .home-news-item -->
                         <div class="home-news-item">
                             <div class="home-news-item__icon">
-                                <img src="{{ site.baseurl }}/assets/themes/coinage/img/ico-tradewithus.png" alt="" />
+                                <img src="/assets/themes/coinage/img/ico-tradewithus.png" alt="" />
                             </div>
 
-                            {% assign about  = "landing." | append: site.exchange | append: ".about" %}
-                            {% assign book   = "landing." | append: site.exchange | append: ".orderbook" %}
-                            {% assign signup = "landing." | append: site.exchange | append: ".signup" %}
+                            
+                            
+                            
 
-                            {% assign title1 = about | append: ".item1.title" %}
-                            {% assign desc1  = about | append: ".item1.description" %}
+                            
+                            
 
-                            {% assign title2 = about | append: ".item2.title" %}
-                            {% assign desc2  = about | append: ".item2.description" %}
+                            
+                            
 
-                            {% assign title3 = about | append: ".item3.title" %}
-                            {% assign desc3  = about | append: ".item3.description" %}
+                            
+                            
 
-                            {% assign learn  = about | append: ".learn" %}
+                            
 
-                            <h2 class="home-news-item__title h3">{% t title1 %}</h2>
+                            <h2 class="home-news-item__title h3">Lorem ipsum dolor</h2>
 
-                            <p>{% t desc1 %}</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                             <div class="home-news-item__btn">
-                                <a href="" class="btn btn-default">{% t learn %}</a>
+                                <a href="" class="btn btn-default">Learn More</a>
                             </div>
                         </div>
                         <!-- /.home-news-item -->
@@ -102,15 +377,15 @@ load_application:       True
                         <!-- .home-news-item -->
                         <div class="home-news-item">
                             <div class="home-news-item__icon">
-                                <img src="{{ site.baseurl }}/assets/themes/coinage/img/ico-secure.png" alt="" />
+                                <img src="/assets/themes/coinage/img/ico-secure.png" alt="" />
                             </div>
 
-                            <h2 class="home-news-item__title h3">{% t title2 %}</h2>
+                            <h2 class="home-news-item__title h3">Lorem ipsum dolor</h2>
 
-                            <p>{% t desc2 %}</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                             <div class="home-news-item__btn">
-                                <a href="" class="btn btn-default">{% t learn %}</a>
+                                <a href="" class="btn btn-default">Learn More</a>
                             </div>
                         </div>
                         <!-- /.home-news-item -->
@@ -122,15 +397,15 @@ load_application:       True
                         <!-- .home-news-item -->
                         <div class="home-news-item">
                             <div class="home-news-item__icon">
-                                <img src="{{ site.baseurl }}/assets/themes/coinage/img/ico-liquidity.png" alt="" />
+                                <img src="/assets/themes/coinage/img/ico-liquidity.png" alt="" />
                             </div>
 
-                            <h2 class="home-news-item__title h3">{% t title3 %}</h2>
+                            <h2 class="home-news-item__title h3">Lorem ipsum dolor</h2>
 
-                            <p>{% t desc3 %}</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                             <div class="home-news-item__btn">
-                                <a href="" class="btn btn-default">{% t learn %}</a>
+                                <a href="" class="btn btn-default">Learn More</a>
                             </div>
                         </div>
                         <!-- /.home-news-item -->
@@ -149,8 +424,8 @@ load_application:       True
             <div class="container">
                 <!-- .home-orders__head -->
                 <header class="home-orders__head">
-                  {% assign book_title = book | append: ".title" %}
-                  <h3 class="home-orders__title">{% t book_title %}</h3>
+                  
+                  <h3 class="home-orders__title">Live Order Book</h3>
                 </header>
                 <!-- /.home-orders__head -->
 
@@ -211,21 +486,21 @@ load_application:       True
         <!-- .home-contact -->
         <div class="home-contact">
             <div class="home-contact__icon">
-                <img src="{{ site.baseurl }}/assets/themes/coinage/img/ico-requestbeta.png" alt="" />
+                <img src="/assets/themes/coinage/img/ico-requestbeta.png" alt="" />
             </div>
 
-            {% assign signup  = "landing." | append: site.exchange | append: ".signup" %}
+            
 
-            {% assign signup_title  = signup | append: ".title" %}
-            {% assign signup_desc   = signup | append: ".description" %}
+            
+            
 
-            <h4 class="home-contact__title h3">{% t signup_title %}</h4>
+            <h4 class="home-contact__title h3">CREATE YOUR ACCOUNT NOW</h4>
 
-            <p>{% t signup_desc %}</p>
+            <p>Sign up and discover how easy it is to trade with us.</p>
 
             <div class="home-contact__btn">
                 <a href="#" data-switch-view="signup" class="btn btn-lg btn-success">
-                    <i class="glyphicon glyphicon-log-in"></i> {% t views.toolbar.signup %}
+                    <i class="glyphicon glyphicon-log-in"></i> Registrar
                 </a>
             </div>
         </div>
@@ -241,7 +516,7 @@ load_application:       True
       <!-- .page__head -->
       <header class="page__head">
           <h1 class="page__title h2 bitex-view-title">
-              <i class="glyphicon glyphicon-question-sign"></i> {% t views.faq.title %}
+              <i class="glyphicon glyphicon-question-sign"></i> FAQ - Perguntas Frequentes
           </h1>
       </header>
       <!-- /.page__head -->
@@ -250,27 +525,560 @@ load_application:       True
       <div class="page__body bitex-view-content">
           <!-- .panel-group -->
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              {% for post in site.categories['faq'] reversed %}
+              
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        {{post.title}}
+                        Como posso auditar o saldo de bitcoins das carteiras da FoxBit?
                     </a>
                   </h4>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body">
-                       {{post.content}}
+                       <p>Para auditar o volume de bitcoins é simples.</p>
+
+<p>As chaves públicas das carteiras (hot e cold) estão disponíveis no site da plataforma e, tudo que você precisa fazer é ir até o site https://blockchain.info e digitar o endereço que você deseja verificar.</p>
+
+<p>Carteira quente (hot wallet): https://blockchain.info/pt/address/12RZE3EXnzjcydQkhHX3pLriLxSEH9xpM6
+Carteira fria (cold wallet): https://blockchain.info/pt/address/3KAuEYkuJQw1Ad2GzWjfC7V5XoL2fCqjGN</p>
+
                   </div>
                 </div>
               </div>
-              {% endfor %}
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Posso depositar reais de uma conta bancária diferente da minha?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Não. A Exchange não aceita depósitos de terceiros.</p>
+
+<p>Cada depósito deve vir do mesmo CPF ou CNPJ do usuário da conta. </p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Como posso controlar toda a minha atividade na plataforma?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>No menu principal (na lateral direita), clique no item “Livro contábil”, lá você encontrará um registro de todas as suas transações realizadas na plataforma. Você também pode verificar seu histórico de depósitos e saques, indo ao menu principal e clicando em “Depósitos” ou em “Saques”.</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Necessito pagar taxas?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Sim, taxas são aplicadas em depósito em reais, saques em reais e transações de compra ou venda de Bitcoins. Você não precisa pagar para depositar ou sacar bitcoins. As taxas para depósitos ou saques de bitcoins são apenas aquelas cobradas pela própria rede Bitcoin (apenas 0.0001 BTC por saque ou depósito) e este valor não pertence à exchange. </p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        A bolsa vende ou compra bitcoins diretamente?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Não, nós fornecemos um serviço de intermediação. Pense em nossa plataforma como o eBay, nós estamos apenas oferecendo uma plataforma (um serviço) na qual você pode encontrar compradores ou vendedores de bitcoin.</p>
+
+<p>Tudo o que fazemos é oferecer um ambiente simples e seguro para você negociar bitcoins com outros usuários.</p>
+
+<p>Nós garantimos que compradores receberão os bitcoins e que os vendedores receberão o dinheiro no preço de venda que foi acordado entre as partes. </p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Horários de operação
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Plataforma on-line: 24 horas por dia / 7 dias por semana (inclusive sábados, domingos e todos os feriados).</p>
+
+<p>Processamento e Suporte ao usuário: Segunda a Sexta-feira de 9h as 18h (Horário local).</p>
+
+<p>Lembrando que o processamento de saques e depósitos é realizado todos os dias, incluindo feriados, porém em dias não-comerciais o prazo de 30 minutos não deve ser considerado.</p>
+
+<p>Contate-nos caso não tenha encontrado resposta à sua pergunta. </p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Como posso negociar bitcoins?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Abrir uma conta para negociar é fácil, rápido e gratuito.</p>
+
+<p>Na página principal da plataforma clique no botão verde “Registrar”, preencha o formulário e faça o login.</p>
+
+<p>Em seguida, o site irá solicitar o envio dos seus documentos para verificar seu nome e seu endereço, assim você será liberado para fazer depósitos e saques na moeda local.</p>
+
+<p>Após a documentação ser aprovada, sua conta poderá ser creditada com um bônus. A partir desse momento, você está pronto para comprar seu  primeira bitcoin.</p>
+
+<p>Caso você não envie seus documentos para validar sua conta, você ainda poderá fazer depósitos e saques de bitcoins.</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Como faço um depósito em reais?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Após entrar na plataforma, use o menu lateral, e clique no link de texto “+ Depósitos”.</p>
+
+<p>No topo da página que irá carregar procure e clique no ícone grande com uma seta para baixo com a legenda (Depositar Real). Após clicar neste ícone uma nova janela irá aparecer. Nesta janela você deverá escolher o banco em que quer depositar (prefira sempre fazer transferência dentro do mesmo banco), e especificar a quantidade (em Reais) que deseja depositar para a compra de bitcoins.</p>
+
+<p>Lembre-se que será cobrada uma taxa a cada vez que realizar um depósito. Em um depósito de R$ 1.000,00 (Mil Reais) com uma taxa de 0,99%, você terá R$ 990,10 creditado em seu saldo.</p>
+
+<p>Consulte a taxa atual aqui: http://www.foxbit.com.br/taxas.html</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Como funciona uma bolsa de bitcoins?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>A plataforma autoriza compradores depositarem reais e vendedores depositarem Bitcoins, a partir daí, permite que compradores e vendedores negociem entre si por um livro de ofertas (orderbook). </p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Quanto tempo leva a confirmação de um depósito em bitcoins?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>O tempo é o mesmo que o sistema leva para confirmar a transação. Normalmente, não mais de dez minutos. Para depósitos superiores a 10 bitcoins, são necessárias três confirmações, o que pode levar cerca de 30 minutos. </p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Quanto tempo demora para confirmar um saque em bitcoins?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>O saque de bitcoins (dependendo do valor) costuma ser automático e instantâneo, mas a confirmação no seu endereço Bitcoin depende da velocidade da rede e do número de confirmações que a sua carteira exige. Normalmente, 15 minutos (1 confirmação) é o suficiente.</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Quanto tempo leva para confirmar um depósito em reais?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Em horário comercial, após a confirmação por parte da instituição bancária, o depósito é creditado no seu saldo em até 30 minutos, porém, devido a fatores externos, a FOXBIT estipula um prazo de ATÉ 24 horas para processar um depósito.</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Quanto tempo demora um saque em reais?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Em horário comercial, uma retirada é processada em menos de 30 minutos, porém, devido a fatores externos, a FOXBIT estipula um prazo de até 24 horas para processar uma retirada.</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Como posso cancelar ordens (de compra ou venda) acidentais?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Para cancelar um pedido, vá para “Comprar ou vender” no menu lateral. Selecione o pedido a ser cancelado da lista “Minhas ordens” e clique em “Cancelar” ao lado do pedido selecionado.</p>
+
+<p>Outra opção é clicar em “Livro de ofertas” e buscar o pedido marcado com o seu nome de usuário em cor vermelha. Clique no seu nome para cancelar esta ordem. </p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Como faço um depósito em bitcoins?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Após entrar na plataforma, use o menu lateral, e clique no link de texto “+ Depósitos”.</p>
+
+<p>No topo da página que irá carregar procure e clique no ícone grande com uma seta para baixo com a legenda (Depositar Bitcoin).
+A plataforma irá gerar um endereço único, novo e exclusivo que só será válido para essa transação específica. Escaneie o QR code (código QR: quadrado com formatos em preto e branco) ou utilize o endereço completo exibido e realize o depósito em bitcoins. </p>
+
+<p>Se você tiver a sua conta verificada, você verá a quantidade de bitcoins creditada em  seu saldo instantaneamente, de forma que você pode vende-los, mas precisará esperar a confirmação da rede para poder sacar reais ou bitcoins.</p>
+
+<p>Nenhuma taxa é cobrada para o depósito de bitcoins, exceto a exigida pela rede Bitcoin (rede Blockchain) para confirmar a transação (geralmente 0.001 bitcoin por transação).</p>
+
+<p>ATENÇÃO: É recomendado que você não reutilize o mesmo endereço.</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Como fazer a negociação para a compra de bitcoins?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Você irá precisar escolher a quantidade de bitcoins que deseja comprar e especificar o valor que você está disposto a pagar por 1 bitcoin.
+O valor é sempre determinado pelo preço de 1 bitcoin, como exemplo é o preço do litro da gasolina em reais.</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Como sacar bitcoins?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Quando você quiser sacar seus bitcoins da Foxbit, tudo que você tem a fazer é solicitar um saque usando o menu lateral, e clicando no link de texto “- Saques”.</p>
+
+<p>Você deverá especificar a quantidade de bitcoins e fornecer a chave pública (endereço da sua carteira Bitcoin) na qual deseja receber os bitcoins.</p>
+
+<p>Por favor, fique atento ao fornecer o endereço de recebimento, já que as transações com bitcoin são irreversíveis. </p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Como sacar reais?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Realizar um saque em reais é tão simples quanto depositar.</p>
+
+<p>Após entrar na plataforma, use o menu lateral, e clique no link de texto “- Saques”. No topo da página que irá carregar, procure e clique no ícone grande com uma seta para cima com a legenda (Sacar Real).</p>
+
+<p>Após clicar neste ícone uma nova janela irá aparecer. Nesta janela você deverá escolher o método do saque (para TED ou DOC é cobrado o custo da transferência bancária) ou saque para um dos bancos que a Foxbit tem conta (isento de taxas bancárias), especificar a quantidade (em Reais) que deseja sacar.</p>
+
+<p>Lembre-se que será cobrada uma taxa a cada vez que realizar um saque. Em um saque de R$ 1.000,00 (Mil Reais) com uma taxa de 0,99%, você terá R$ 990,10 creditado em seu banco.</p>
+
+<p>Consulte as taxas aqui: http://www.foxbit.com.br/taxas</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Como funciona a segurança dos meus bitcoins?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>A nossa principal preocupação é a de permitir que os usuários interajam dentro de um ambiente seguro. Os bitcoins são armazenados em uma carteira multi-assinada de armazenamento a frio (cold wallet) e longe dos servidores da FoxBit. Por isso, ainda que o servidor seja invadido, os bitcoins estão fora do alcance dos hackers. </p>
+
+<p>Nossa carteira multi-assinada requer 2 de 3 assinaturas para a movimentação de saldo. A Foxbit detém uma das chaves e as outras duas estão nas mãos da Blinktrade e da BitGO. 
+Ou seja, mesmo que um hacker comprometa a segurança da chave da FoxBit, ele também terá que comprometer o acesso da BlinkTrade, para então ser capaz de movimentar os bitcoins. Diante desse cenário, as probabilidades são extremamente baixas de que isso aconteça.</p>
+
+<p>Cada vez que os bitcoins precisem ser movidos da cold-wallet para a hot-wallet (que é a carteira conectada à internet para o processamento de saques rápidos), a BlinkTrade irá, previamente, verificar o sistema afim de realizar uma prova de solvência dos bitcoins. Em outras palavras, cada vez que os bitcoins são movidos da cold-wallet para a hot-wallet, a BlinkTrade realiza uma verificação completa do sistema.</p>
+
+<p>A hot-wallet é mantida nos servidores do Blockchain.info e apenas mantemos uma pequena quantidade de bitcoins capaz de cobrir as operações do dia-a-dia. Ainda assim, todas as medidas de segurança da hot-wallet são executadas pelo Blockchain.info</p>
+
+<p>Somos francos em dizer que nenhuma bolsa no mundo é 100% segura. Por isso, mesmo que executemos todas as medidas de segurança, nós não queremos criar um pote de ouro que vai desafiar hackers a comprometer nossos sistemas.</p>
+
+<p>Nós encorajamos os usuários a apenas depositarem seus bitcoins quando estão interessados em vendê-los e não usar a FoxBit como uma carteira de bitcoins. O procedimento mais seguro é sempre manter seus bitcoins em sua carteira até que você deseja trocá-los.</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        O que é autenticação em 2 passos?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>A autenticação em 2 passos, também conhecida como 2factor e autenticação em 2 fatores, é um recurso que acrescenta uma camada adicional de segurança para o processo de login da conta, exigindo que você forneça dois passos para autenticação. O primeiro passo é a sua senha e o segundo é um código gerado a cada 30 segundos por um aplicativo para smartphone chamado Authy, mas também pode ser utilizado o Google Authenticator.</p>
+
+<p>Acesse https://authy.com e faça o download para aumentar a segurança do acesso a sua conta.</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        O que são esses nomes no livro de ofertas?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Nós atribuímos um nome aleatório para cada conta.</p>
+
+<p>Assim, em vez de publicar o nome real do usuário, estamos publicando um nome aleatório.</p>
+
+<p>Isso protege a privacidade do usuário, desde que ele não revele a ligação entre seu nome verdadeiro e o nome gerado aleatoriamente. É de responsabilidade do usuário proteger sua própria privacidade.</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        O que é uma bolsa de bitcoins?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>É simplesmente uma plataforma (um website), onde pessoas interessadas em comprar bitcoins encontram vendedores interessados em vender bitcoins e vice-e-versa. </p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        O que é Bitcoin?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Bitcoin é uma rede P2P (rede de computadores que permite o compartilhamento de serviços e dados sem a necessidade de um servidor central) de código aberto criada em 2009 pelo autor de pseudônimo Satoshi Nakamoto. O protocolo desta rede permite ao usuário enviar, armazenar e receber valores com um baixíssimo custo e de forma muito rápida. O uso de Bitcoin evita a necessidade de autoridades financeiras centralizadoras (governos, bancos centrais, etc) e até de empresas operadoras (bancos privados, cartões de créditos, sites intermediadores de pagamento).</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Como funciona o “depósito instantâneo”?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>É uma funcionalidade exclusiva das bolsas que utilizam tecnologia Blinktrade que permite aos usuários confiáveis e verificados que recebam os bitcoins assim que a transação for publicada na rede, independentemente do número de confirmações.</p>
+
+<p>Essa funcionalidade está disponível apenas para usuários verificados, além de ter um limite máximo de 9,99 Bitcoins por depósito.</p>
+
+<p>Lembrando que enquanto sua transação não for confirmada, você não poderá sacar bitcoins ou reais.</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Qual é a relação entre a Bolsa de Bitcoins e a Blinktrade?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Blinktrade é o provedor de tecnologia da plataforma. Nós contratamos os serviços da Blinktrade, e esta oferece os serviços de TI.</p>
+
+<p>A operadora de fato somos nós, que realizamos as operações diárias, ou seja, processa depósitos e saques, verifica a identidade dos clientes e permite que sejam realizadas transações seguras. </p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Onde estão os dados bancários para depósitos?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Para depositar fundos na FOXBIT, é necessário verificar sua conta e uma vez que esse processo já foi realizado, você poderá depositar valores. Todas os dados bancários necessários aparecerão em uma janela quando for solicitada uma ordem de depósito. </p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Quem paga a taxa de saque?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Tanto para saques em reais como em bitcoins, a taxa é paga por quem realiza a solicitação. A taxa em Reais é estabelecida pela FOXBIT (http://www.foxbit.com.br/taxas), já a taxa em Bitcoins (0.0001 bitcoin) é estabelecida pelo mineradores da rede bitcoin.</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Por que os pseudnônimos são publicados no livro de ofertas?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Há uma série de razões por trás disso. Vamos citar os mais importantes:</p>
+
+<p>1 - Isto evita manipulações de mercado, como frontrunning, PumpAndDump, e outras manipulações. Você pode tentar, mas as pessoas iriam pegá-lo imediatamente e deixariam de seguir os manipuladores. Essencialmente, os manipuladores do mercado perderiam o seu dinheiro, porque as pessoas seriam capazes de capturar a manipulação muito facilmente.</p>
+
+<p>2 - Permite aos usuários auditarem as ordens de compra e venda da FoxBit, ajudando a provar a solvência dos bitcoins depositados nos endereços da empresa.</p>
+
+<p>Sabemos que a maioria das empresas intermediadoras de Bitcoins não publicam estes dados, e é por isso que vemos muitas manipulações do mercado, e também alguns golpistas que só querem roubar bitcoins de seus clientes.</p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Por que não tenho a chave privada da minha carteira na Foxbit?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                       <p>Nosso princípio é que as bitcoins depositadas na Foxbit estão lá para serem trocadas por Reais. Por isso, para garantir segurança e rapidez na negociação, a Foxbit mantém os depósitos, sejam em reais ou bitcoins. </p>
+
+                  </div>
+                </div>
+              </div>
+              
           </div>
           <!-- /.panel-group -->
 
           <a href="" class="bitex-support-link" target="_blank">
-              <i class="glyphicon glyphicon-envelope"></i> {% t views.faq.get_in_touch %}.
+              <i class="glyphicon glyphicon-envelope"></i> Entre em contato caso você não tenha conseguido encontrar a resposta para a sua pergunta.
           </a>
       </div>
       <!-- /.page__body -->
@@ -284,7 +1092,7 @@ load_application:       True
       <!-- .page__head -->
       <header class="page__head">
           <h1 class="page__title h2 bitex-view-title">
-              <i class="glyphicon glyphicon-stats"></i> {% t views.market.title %}
+              <i class="glyphicon glyphicon-stats"></i> Mercado
           </h1>
       </header>
       <!-- /.page__head -->
@@ -312,10 +1120,10 @@ load_application:       True
                 <!-- .page__head -->
                 <header class="page__head">
                     <h1 class="page__title h2 bitex-view-title" style="margin-bottom: 10px;">
-                        <i class="glyphicon glyphicon-user"></i> {% t views.signin.title %}
+                        <i class="glyphicon glyphicon-user"></i> Login
                     </h1>
                     <p>
-                      {% t views.signin.dont_have_an_account %} <a href="signup" data-switch-view="signup">{% t views.signin.signup %}</a>.
+                      Não possui uma conta? <a href="signup" data-switch-view="signup">Registre-se</a>.
                     </p>
                 </header>
                 <!-- /.page__head -->
@@ -324,19 +1132,19 @@ load_application:       True
                 <div class="page__body bitex-view-content">
                   <form accept-charset="UTF-8" action="" method="post">
                     <div class="form-group">
-                      <label for="id_username">{% t views.signin.username %}:</label>
+                      <label for="id_username">Nome de usuário:</label>
                       <input class="form-control" autocapitalize="off" autocorrect="off" id="id_username" name="username" type="text">
                     </div>
 
                     <div class="form-group">
-                      <label for="id_password">{% t views.signin.password %}:</label>
+                      <label for="id_password">Senha:</label>
                       <input class="form-control" id="id_password"  placeholder="" name="password" type="password">
                       <p class="help-block">
-                        <a class="login__remember" href="forgot_password" data-switch-view="forgot_password">{% t views.signin.forgot_your_password %}</a>
+                        <a class="login__remember" href="forgot_password" data-switch-view="forgot_password">Esqueceu a sua senha?</a>
                       </p>
                     </div>
 
-                    <input id="id_btn_login"  class="btn btn-primary btn-block" name="commit" type="submit" value="{% t views.signin.login_button_label %}">
+                    <input id="id_btn_login"  class="btn btn-primary btn-block" name="commit" type="submit" value="Entrar">
                   </form>
                 </div>
                 <!-- /.page__body -->
@@ -356,9 +1164,9 @@ load_application:       True
                 <!-- .page__head -->
                 <header class="page__head">
                     <h1 class="page__title h2 bitex-view-title" style="margin-bottom: 10px;">
-                        <i class="glyphicon glyphicon-log-in"></i> {% t views.signup.title %}
+                        <i class="glyphicon glyphicon-log-in"></i> Registrar
                     </h1>
-                    <p>{% t views.signup.already_registered %} <a href="#" data-switch-view="signin">{% t views.signup.login %}</a>.</p>
+                    <p>Já possui registro? <a href="#" data-switch-view="signin">Entrar</a>.</p>
                 </header>
                 <!-- /.page__head -->
 
@@ -366,38 +1174,38 @@ load_application:       True
                 <div class="page__body bitex-view-content">
                     <form accept-charset="UTF-8" id="new_user" method="post">
                         <div class="form-group">
-                          <label for="id_signup_username">{% t views.signup.username %}:</label>
+                          <label for="id_signup_username">Nome de usuário:</label>
                           <input id="id_signup_username" class="form-control" name="Username" size="30" type="text" placeholder="">
                         </div>
 
                         <div class="form-group">
-                          <label for="id_signup_email">{% t views.signup.email %}:</label>
-                          <input id="id_signup_email" class="form-control" name="Email" size="30" type="text" placeholder="{% t views.signup.email_placeholder %}">
+                          <label for="id_signup_email">Email:</label>
+                          <input id="id_signup_email" class="form-control" name="Email" size="30" type="text" placeholder="ex.: jose@email.com">
                         </div>
 
                         <div class="form-group">
-                          <label for="id_signup_password">{% t views.signup.password %}:</label>
+                          <label for="id_signup_password">Senha:</label>
                           <input id="id_signup_password" class="form-control" name="Password" size="30" type="password">
-                          <p class="help-block">{% t views.signup.password_help %}</p>
+                          <p class="help-block">Pelo menos 8 letras</p>
                         </div>
 
                         <div class="form-group">
-                          <label for="id_signup_password2">{% t views.signup.confirm_password %}:</label>
+                          <label for="id_signup_password2">Confirme a sua senha:</label>
                           <input id="id_signup_password2" class="form-control" name="Password2" size="30" type="password">
                         </div>
 
                         <div class="form-group">
-                          <label for="id_signup_country">{% t views.signup.country %}:</label>
+                          <label for="id_signup_country">País:</label>
                           <select id="id_signup_country" class="form-control" name="country"></select>
                         </div>
 
                         <div class="form-group" id="id_signup_state_group" style="display: none">
-                          <label for="id_signup_state">{% t views.signup.state %}:</label>
+                          <label for="id_signup_state">Estado ou Província:</label>
                           <select id="id_signup_state" class="form-control" name="state"></select>
                         </div>
 
                         <div class="form-group" style="display: none;">
-                          <label for="id_signup_broker">{% t views.signup.broker %}</label>
+                          <label for="id_signup_broker">Corretor</label>
                           <select id="id_signup_broker" class="form-control" name="broker"></select>
                         </div>
 
@@ -405,11 +1213,11 @@ load_application:       True
 
                         <div class="form-group">
                             <label for="">
-                              <input id="user_agreed_tos" name="" type="checkbox" checked> {% t views.signup.i_agree_with_terms_of_service %}
+                              <input id="user_agreed_tos" name="" type="checkbox" checked> Estou de acordo com os termos de serviço
                             </label>
                         </div>
 
-                        <button id="id_btn_signup" class="btn btn-primary btn-block">{% t views.signup.signup_button_label %}</button>
+                        <button id="id_btn_signup" class="btn btn-primary btn-block">Registrar</button>
                     </form>
                 </div>
                 <!-- /.page__body -->
@@ -429,7 +1237,7 @@ load_application:       True
                 <!-- .page__head -->
                 <header class="page__head">
                     <h1 class="page__title h2 bitex-view-title">
-                        <i class="glyphicon glyphicon-envelope"></i> {% t views.forgot_password.title %}
+                        <i class="glyphicon glyphicon-envelope"></i> Recuperação da senha
                     </h1>
                 </header>
                 <!-- /.page__head -->
@@ -438,11 +1246,11 @@ load_application:       True
                 <div class="page__body bitex-view-content">
                   <form accept-charset="UTF-8" action="" method="post">
                       <div class="form-group">
-                        <label for="id_forgot_password_email">{% t views.forgot_password.email %}:</label>
+                        <label for="id_forgot_password_email">Email:</label>
                         <input autocapitalize="off" autocorrect="off" id="id_forgot_password_email" class="form-control" name="email" type="text" placeholder="">
                       </div>
 
-                      <input id="id_btn_forgot_password" class="btn btn-primary btn-block" name="commit" type="submit" value="{% t views.forgot_password.recover_password_button_label %}">
+                      <input id="id_btn_forgot_password" class="btn btn-primary btn-block" name="commit" type="submit" value="Recuperar senha">
                   </form>
                 </div>
                 <!-- /.page__body -->
@@ -480,7 +1288,7 @@ load_application:       True
 
             <!-- .sidebar-box -->
             <div class="sidebar-box">
-                <h5 class="sidebar-box__title">{% t views.sidebar.market %}</h5>
+                <h5 class="sidebar-box__title">Mercado:</h5>
 
                 <div class="sidebar-box__body">
                     <select class="form-control" id="id_instrument_1"></select>
@@ -496,37 +1304,37 @@ load_application:       True
                     <ul class="sidebar-box-nav nav">
                         <li role="presentation">
                             <a href="#" data-switch-view="offerbook">
-                                <i class="glyphicon glyphicon-book"></i> {% t views.sidebar.offerbook %}
+                                <i class="glyphicon glyphicon-book"></i> Livro de ofertas
                             </a>
                         </li>
                         <li role="presentation">
                             <a href="#" data-switch-view="trading">
-                                <i class="glyphicon glyphicon-random"></i> {% t views.sidebar.trading %}
+                                <i class="glyphicon glyphicon-random"></i> Comprar ou Vender
                             </a>
                         </li>
                         <li role="presentation">
                             <a href="#" data-switch-view="algotrading">
-                                <i class="glyphicon glyphicon-cog"></i> {% t views.sidebar.algotrading %}
+                                <i class="glyphicon glyphicon-cog"></i> Algo Trading
                             </a>
                         </li>
                         <li role="presentation">
                             <a href="#" data-switch-view="ledger">
-                                <i class="glyphicon glyphicon-th-list"></i> {% t views.sidebar.ledger %}
+                                <i class="glyphicon glyphicon-th-list"></i> Livro contábil
                             </a>
                         </li>
                         <li role="presentation">
                             <a href="#" data-switch-view="market">
-                                <i class="glyphicon glyphicon-stats"></i> {% t views.toolbar.market %}
+                                <i class="glyphicon glyphicon-stats"></i> Mercado
                             </a>
                         </li>
                         <li id="verification_menu_id">
                             <a href="verification" data-switch-view="verification">
-                                <i class="glyphicon glyphicon-check"></i> {% t views.sidebar.verification %}
+                                <i class="glyphicon glyphicon-check"></i> Verificar a sua conta
                             </a>
                         </li>
                         <li>
                             <a href="javascript:location.reload()">
-                                <i class="glyphicon glyphicon-off"></i> {% t views.sidebar.logout %}
+                                <i class="glyphicon glyphicon-off"></i> Sair
                             </a>
                         </li>
                     </ul>
@@ -547,7 +1355,7 @@ load_application:       True
                 <!-- .page__head -->
                 <header class="page__head section-title">
                     <h3 class="page__title bitex-view-title">
-                        <i class="glyphicon glyphicon-book"></i> {% t views.offerbook.title %}
+                        <i class="glyphicon glyphicon-book"></i> Livro de ofertas
                     </h3>
                 </header>
                 <!-- /.page__head -->
@@ -579,7 +1387,7 @@ load_application:       True
                 <!-- .page__head -->
                 <header class="page__head section-title">
                     <h1 class="page__title h2 bitex-view-title">
-                        <i class="glyphicon glyphicon-user"></i> {% t views.profile.title %}
+                        <i class="glyphicon glyphicon-user"></i> Meu Perfil
                     </h1>
                 </header>
                 <!-- /.page__head -->
@@ -595,7 +1403,7 @@ load_application:       True
                   <!-- .profile-two-factor -->
                   <div class="profile-two-factor col-xs-12 col-md-5 page__section_white page__padding">
                       <!-- .profile-two-factor__title -->
-                      <h4 class="profile-two-factor__title">{% t views.profile.two_factor_auth_section.title %}</h4>
+                      <h4 class="profile-two-factor__title">Autenticação em 2 passos (2FA)</h4>
                       <!-- /.profile-two-factor__title -->
 
                       <!-- .profile-two-factor__body -->
@@ -603,17 +1411,17 @@ load_application:       True
                           <!-- .profile-two-factor__form -->
                           <ul id="id_enable_two_factor_div" class="profile-two-factor__form nav">
                               <li>
-                                  <label class="profile-two-factor__label">{% t views.profile.two_factor_auth_section.key %}:</label>
+                                  <label class="profile-two-factor__label">Chave:</label>
                                   <div id='secret' class="bitex-model" data-model-key="TwoFactorSecret"></div>
 
                                   <img id="id_secret_qr" src="" />
                               </li>
 
                               <li>
-                                  <label class="profile-two-factor__label">{% t views.profile.two_factor_auth_section.authentication_code %}:</label>
+                                  <label class="profile-two-factor__label">Código de Autenticação:</label>
                                   <input id="id_second_step_verification" type="text" class="form-control"
-                                       pattern="\d+" title="{% t views.profile.two_factor_auth_section.authentication_code_title %}"
-                                       placeholder="{% t views.profile.two_factor_auth_section.authentication_code_placeholder %}" required />
+                                       pattern="\d+" title="Código gerado pelo Google Authenticator"
+                                       placeholder="Ex. 555555" required />
                               </li>
                           </ul>
                           <!-- /.profile-two-factor__form -->
@@ -622,8 +1430,8 @@ load_application:       True
 
                       <!-- .profile-two-factor__foot -->
                       <div class="profile-two-factor__foot">
-                          <button id="id_btn_enable_two_factor" class="btn btn-success profile-two-factor__btn">{% t views.profile.two_factor_auth_section.enable %}</button>
-                          <button id="id_btn_disable_two_factor" class="btn btn-danger profile-two-factor__btn">{% t views.profile.two_factor_auth_section.disable %}</button>
+                          <button id="id_btn_enable_two_factor" class="btn btn-success profile-two-factor__btn">Habilitar</button>
+                          <button id="id_btn_disable_two_factor" class="btn btn-danger profile-two-factor__btn">Desabilitar</button>
                       </div>
                       <!-- /.profile-two-factor__foot -->
                   </div>
@@ -640,14 +1448,14 @@ load_application:       True
                     <div class="row">
                       <div class="col-xs-6">
                         <h1 class="page__title h2 bitex-view-title">
-                            <i class="glyphicon glyphicon-dashboard"></i> {% t views.api.title %}
+                            <i class="glyphicon glyphicon-dashboard"></i> API Keys
                         </h1>
                       </div>
                       <div class="col-xs-6 pull-right">
                         <ul id="id_api_button_group" class="page__nav">
                             <li>
                                 <a id="id_btn_new_api_key" class="btn btn-success">
-                                    <i class="glyphicon glyphicon-plus"></i> {% t views.api.new_api_key %}
+                                    <i class="glyphicon glyphicon-plus"></i> Nova API Key
                                 </a>
                             </li>
                         </ul>
@@ -683,7 +1491,7 @@ load_application:       True
                 <!-- .page__head -->
                 <header class="page__head section-title">
                     <h3 class="page__title bitex-view-title">
-                        <i class="glyphicon glyphicon-random"></i> {% t views.trading.title %}
+                        <i class="glyphicon glyphicon-random"></i> Comprar ou Vender
                     </h3>
                 </header>
                 <!-- /.page__head -->
@@ -702,7 +1510,7 @@ load_application:       True
                 <!-- .page__head -->
                 <header class="page__head section-title">
                     <h1 class="page__title h2 bitex-view-title">
-                        <i class="glyphicon glyphicon-cog"></i> {% t views.algotrading.title %}
+                        <i class="glyphicon glyphicon-cog"></i> Algorithm Trading
                     </h1>
                 </header>
                 <!-- /.page__head -->
@@ -720,7 +1528,7 @@ load_application:       True
                 <!-- .page__head -->
                 <header class="page__head section-title">
                     <h1 class="page__title h2 bitex-view-title">
-                        <i class="glyphicon glyphicon-th-list"></i> {% t views.ledger.title %}
+                        <i class="glyphicon glyphicon-th-list"></i> Livro contábil
                     </h1>
                 </header>
                 <!-- /.page__head -->
@@ -740,7 +1548,7 @@ load_application:       True
               <div id="customers" class="bitex-view">
                 <!-- .page__head -->
                 <header class="page__head section-title">
-                  <h1 class="page__title h2 bitex-view-title">{% t views.customers.title %}</h1>
+                  <h1 class="page__title h2 bitex-view-title">Meus clientes</h1>
                 </header>
                 <!-- /.page__head -->
 
@@ -757,7 +1565,7 @@ load_application:       True
                 <!-- .page__head -->
                 <header class="page__head section-title">
                     <h1 class="page__title h2 bitex-view-title">
-                        <i class="glyphicon glyphicon-plus-sign"></i> {% t views.deposit_requests.title %}
+                        <i class="glyphicon glyphicon-plus-sign"></i> Pedidos de depósitos
                     </h1>
                 </header>
                 <!-- /.page__head -->
@@ -776,7 +1584,7 @@ load_application:       True
                 <!-- .page__head -->
                 <header class="page__head section-title">
                     <h1 class="page__title h2 bitex-view-title">
-                        <i class="glyphicon glyphicon-minus-sign"></i> {% t views.withdraw_requests.title %}
+                        <i class="glyphicon glyphicon-minus-sign"></i> Pedidos de saques
                     </h1>
                 </header>
                 <!-- /.page__head -->
@@ -795,7 +1603,7 @@ load_application:       True
                 <!-- .page__head -->
                 <header class="page__head section-title">
                     <h1 class="page__title h2 bitex-view-title">
-                        <i class="glyphicon glyphicon-plus"></i> {% t views.deposit.title %}
+                        <i class="glyphicon glyphicon-plus"></i> Depósitos
                     </h1>
                 </header>
                 <!-- /.page__head -->
@@ -815,7 +1623,7 @@ load_application:       True
                 <!-- .page__head -->
                 <header class="page__head section-title">
                     <h1 class="page__title h2 bitex-view-title">
-                        <i class="glyphicon glyphicon-minus"></i> {% t views.withdraw.title %}
+                        <i class="glyphicon glyphicon-minus"></i> Saques
                     </h1>
                 </header>
                 <!-- /.page__head -->
@@ -834,7 +1642,7 @@ load_application:       True
               <div id="account_overview" class="bitex-view">
                 <!-- .page__head -->
                 <header class="page__head section-title">
-                  <h1 class="page__title h2 bitex-view-title">{% t views.account_overview.title %}</h1>
+                  <h1 class="page__title h2 bitex-view-title">Detalhe da conta</h1>
                 </header>
                 <!-- /.page__head -->
 
@@ -850,7 +1658,7 @@ load_application:       True
 
                         <div id="account_overview_fees_balances_id"></div>
 
-                        <button id="id_btn_user_fees" class="btn btn-primary">{% t views.account_overview.set_user_fees_button_label %}</button>
+                        <button id="id_btn_user_fees" class="btn btn-primary">Definir taxas personalizadas</button>
 
                       </div>
                     </div>
@@ -865,7 +1673,7 @@ load_application:       True
               <div id="set_new_password" class="bitex-view">
                 <!-- .page__head -->
                 <header class="page__head section-title">
-                  <h1 class="page__title h2 bitex-view-title">{% t views.set_new_password.title %}</h1>
+                  <h1 class="page__title h2 bitex-view-title">Definir nova senha</h1>
                 </header>
                 <!-- /.page__head -->
 
@@ -874,31 +1682,31 @@ load_application:       True
                   <form accept-charset="UTF-8" class="form-horizontal" id="redefine_new_password_form" method="post">
 
                     <div class="control-group">
-                      <label class="control-label">{% t views.set_new_password.security_code %}</label>
+                      <label class="control-label">Código de segurança</label>
                       <div class="controls">
                         <input id="id_set_new_password_token" name="Email" size="30" type="text" placeholder="">
-                        <p class="help-block">{% t views.set_new_password.security_code_help %}</p>
+                        <p class="help-block">Nós acabamos de enviar um código de segurança para o seu email.</p>
                       </div>
 
                     </div>
 
                     <div class="control-group">
-                      <label class="control-label">{% t views.set_new_password.new_password %}</label>
+                      <label class="control-label">Nova senha</label>
                       <div class="controls">
                         <input id="id_set_new_password_password" name="Password" size="30" type="password">
-                        <p class="help-block">{% t views.set_new_password.new_password_help %}</p>
+                        <p class="help-block">Pelo menos 8 letras</p>
                       </div>
                     </div>
 
                     <div class="control-group">
-                      <label class="control-label">{% t views.set_new_password.confirm_password %}</label>
+                      <label class="control-label">Confirme a sua senha</label>
                       <div class="controls">
                         <input id="id_set_new_password_password2" name="Password2" size="30" type="password">
                       </div>
                     </div>
 
                     <div class="actions">
-                      <input id="id_btn_set_new_password"  class="btn btn-primary" name="commit" type="submit" value="{% t views.set_new_password.set_new_password_button_label %}">
+                      <input id="id_btn_set_new_password"  class="btn btn-primary" name="commit" type="submit" value="Redefinir senha">
                     </div>
                   </form>
                 </div>
@@ -910,7 +1718,7 @@ load_application:       True
               <div id="settings" class="bitex-view">
                 <!-- .page__head -->
                 <header class="page__head section-title">
-                  <h1 class="page__title h2 bitex-view-title">{% t views.settings.title %}</h1>
+                  <h1 class="page__title h2 bitex-view-title">Configurações</h1>
                 </header>
                 <!-- /.page__head -->
 
@@ -926,7 +1734,7 @@ load_application:       True
                 <!-- .page__head -->
                 <header class="page__head section-title">
                     <h1 class="page__title h2 bitex-view-title">
-                        <i class="glyphicon glyphicon-check"></i> {% t views.verification.title %}
+                        <i class="glyphicon glyphicon-check"></i> Verificar a sua conta
                     </h1>
                 </header>
                 <!-- /.page__head -->
@@ -1006,4 +1814,174 @@ load_application:       True
   <!-- /.bitex-display-if-logged -->
 </div>
 <!-- /.container-fluid -->
+
+
+
+
+  <!-- .foot -->
+  <footer class="foot">
+    <!-- .wrapper -->
+    <div class="container">
+      <div class="col-xs-8 col-xs-offset-2">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Empresa</h5>
+                <ul>
+                    <li>
+                        <a href="#about">Sobre</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://www.foxbit.com.br/blog/" target="_blank">Blog</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="http://www.foxbit.com.br/grafico/" target="_blank">Gráfico</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Plataforma</h5>
+                <ul>
+                    
+                    <li>
+                        <a href="" data-switch-view="admin">admin</a>
+                    </li>
+                    <li>
+                        Latency: <span class="bitex-model" data-model-key="latency">0</span> ms
+                    </li>
+                    
+                    <li>
+                        Version: 1e148e6
+                    </li>
+                    <li>
+                        <a href="https://github.com/blinktrade/" target="_blank">Proudly 100% open source <span class="bitex-model" data-model-key="JSVersion"></span></a>
+                    </li>
+                    <li>
+                        <a href="http://nytm.org/made-in-nyc/" target="_blank">Made with <span style="color: #d11f0d;font-size: 19px;">♥</span> in NYC</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5></h5>
+                <ul>
+                    <li>
+                        <a href="#" data-switch-view="api">API </a>
+                    </li>
+                    <li>
+                        <a href="" data-switch-view="faq">Suporte e Sugestões</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row center">
+            <hr>
+            <a href="http://blinktrade.com/" target="_blank">© 2014 BlinkTrade Inc</a>
+        </div>
+        <div class="row foot-social">
+            
+            <div class="col-xs-2 col-xs-offset-2">
+                <div class="social-button">
+                    <h3>
+                        <a href="https://www.facebook.com/foxbitcoin" target="_blank">
+                            <i class="fa fa-facebook-official"></i>
+                        </a>
+                    </h3>
+                </div>
+            </div>
+            
+            
+            <div class="col-xs-2">
+                <div class="social-button">
+                    <h3>
+                        <a href="https://twitter.com/foxbitcoin" target="_blank">
+                            <i class="fa fa fa-twitter-square"></i>
+                        </a>
+                    </h3>
+                </div>
+            </div>
+            
+            
+            <div class="col-xs-2">
+                <div class="social-button">
+                    <h3>
+                        <a href="https://plus.google.com/+FoxbitBrasil/posts" target="_blank">
+                            <i class="fa fa fa-google-plus-square"></i>
+                        </a>
+                    </h3>
+                </div>
+            </div>
+            
+            
+            <div class="col-xs-2">
+                <div class="social-button">
+                    <h3>
+                        <a href="https://www.youtube.com/playlist?list=PL6c8tfdY-CX_VTwU1B9XbzWtIQjY__vrW" target="_blank">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </h3>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+    </div>
+    <!-- /.wrapper -->
+  </footer>
+  <!-- /.foot -->
+
+  <div id="id_notifications" class="notifications top-right" style="z-index: 9000;"></div>
+
+  
+  <script data-cfasync="false" type="text/javascript">
+    var _app;  // global application object
+    (function(){
+      var broker_id = 4;
+      var country_code = "BR";
+      var blinktrade_api = "api.testnet.blinktrade.com";
+      var symbol = "BTCBRL";
+
+      var remittance_box = { 'BRL':[ ['BitFinexUSD',        'USD', 'BITFINEX_BTCUSD_BEST_BID / 100000000', 'BITFINEX_BTCUSD_BEST_ASK / 100000000'  ], ['Dólar Bitcoin',      'BRL', 'BLINK_BTCBRL_BEST_BID /  BITFINEX_BTCUSD_BEST_ASK', 'BLINK_BTCBRL_BEST_ASK /  BITFINEX_BTCUSD_BEST_BID'  ], ['Dólar Turismo',      'BRL', 'UOL_USDBRT_BEST_BID / 100000000', 'UOL_USDBRT_BEST_ASK / 100000000' ] ], 'USD':[ ['BitFinexUSD',        'USD', 'BITFINEX_BTCUSD_BEST_BID / 100000000', 'BITFINEX_BTCUSD_BEST_ASK / 100000000'  ], ['BitStampUSD',        'USD', 'BITSTAMP_BTCUSD_BEST_BID / 100000000', 'BITSTAMP_BTCUSD_BEST_ASK / 100000000'  ], ['KrakenUSD',          'USD', 'KRAKEN_BTCUSD_BEST_BID / 100000000', 'KRAKEN_BTCUSD_BEST_ASK / 100000000'  ], ['itBitUSD',           'USD', 'ITBIT_BTCUSD_BEST_BID / 100000000', 'ITBIT_BTCUSD_BEST_ASK / 100000000'  ] ], 'VEF':[ ['BitFinexUSD',        'USD', 'BITFINEX_BTCUSD_BEST_BID / 100000000', 'BITFINEX_BTCUSD_BEST_ASK / 100000000'  ], ['USD -> BTC -> VEF',  'VEF', 'BLINK_BTCVEF_BEST_BID /  BITFINEX_BTCUSD_BEST_ASK', 'BLINK_BTCVEF_BEST_ASK /  BITFINEX_BTCUSD_BEST_BID' ] , ['BRL -> BTC -> VEF',  'VEF', 'BLINK_BTCVEF_BEST_BID /  BLINK_BTCBRL_BEST_ASK',    'BLINK_BTCVEF_BEST_ASK /  BLINK_BTCBRL_BEST_BID' ], ['VEF -> BTC -> CLP',  'CLP', 'BLINK_BTCCLP_BEST_BID /  BLINK_BTCVEF_BEST_ASK',    'BLINK_BTCCLP_BEST_ASK /  BLINK_BTCVEF_BEST_BID' ] ], 'CLP':[ ['BitFinexUSD',        'USD', 'BITFINEX_BTCUSD_BEST_BID / 100000000', 'BITFINEX_BTCUSD_BEST_ASK / 100000000'  ], ['USD -> BTC -> CLP',  'CLP', 'BLINK_BTCCLP_BEST_BID /  BITFINEX_BTCUSD_BEST_ASK', 'BLINK_BTCCLP_BEST_ASK /  BITFINEX_BTCUSD_BEST_BID' ] , ['BRL -> BTC -> CLP',  'CLP', 'BLINK_BTCCLP_BEST_BID /  BLINK_BTCBRL_BEST_ASK',    'BLINK_BTCCLP_BEST_ASK /  BLINK_BTCBRL_BEST_BID' ] , ['VEF -> BTC -> CLP',  'CLP', 'BLINK_BTCCLP_BEST_BID /  BLINK_BTCVEF_BEST_ASK',    'BLINK_BTCCLP_BEST_ASK /  BLINK_BTCVEF_BEST_BID' ] ], 'VND':[ ['BitFinexUSD',        'USD', 'BITFINEX_BTCUSD_BEST_BID / 100000000', 'BITFINEX_BTCUSD_BEST_ASK / 100000000'  ], ['USD -> BTC -> VND',  'VND', 'BLINK_BTCVND_BEST_BID /  BITFINEX_BTCUSD_BEST_ASK', 'BLINK_BTCPKR_BEST_ASK /  BITFINEX_BTCVND_BEST_BID' ] ], 'PKR':[ ['BitFinexUSD',        'USD', 'BITFINEX_BTCUSD_BEST_BID / 100000000', 'BITFINEX_BTCUSD_BEST_ASK / 100000000'  ], ['USD -> BTC -> PKR',  'PKR', 'BLINK_BTCPKR_BEST_BID /  BITFINEX_BTCUSD_BEST_ASK', 'BLINK_BTCPKR_BEST_ASK /  BITFINEX_BTCUSD_BEST_BID' ] ] };
+
+      _app = new BlinkTradeApp(broker_id, remittance_box, country_code, symbol);
+      _app.run(blinktrade_api);
+    })();
+  </script>
+  
+
+  
+  <script data-cfasync="false" type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', '_gat');
+
+    _gat('create', 'UA-57478613-1', 'auto');
+    _gat('send', 'pageview');
+  </script>
+  
+
+  
+  <!--Start of Zopim Live Chat Script-->
+  <script data-cfasync="false" type="text/javascript">
+    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+        d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+        _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+      $.src='https://v2.zopim.com/?2ZQbAVSILzBFbO31Z6EletdDQaW7H9xj';z.t=+new Date;$.
+          type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+  </script>
+  <!--End of Zopim Live Chat Script-->
+  
+
+  </body>
+</html>
 
