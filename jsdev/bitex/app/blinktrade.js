@@ -1020,13 +1020,16 @@ bitex.app.BlinkTrade.prototype.onBitexWithdrawResponse_ = function(e) {
  * Prevent reload page
  */
 bitex.app.BlinkTrade.prototype.preventReload = function() {
-    var MSG_PREVENT_RELOAD = goog.getMsg('You will lose your connection');
-    window.onbeforeunload = function(e){
-        if(this.conn_.isLogged())
-            return MSG_PREVENT_RELOAD;
-        else
-            e.preventDefault();
-    }.bind(this);
+  /**
+   * @desc Warning message to prevent page reload
+   */
+  var MSG_PREVENT_RELOAD = goog.getMsg('You will lose your connection');
+  window.onbeforeunload = function(e){
+      if(this.conn_.isLogged())
+          return MSG_PREVENT_RELOAD;
+      else
+          e.preventDefault();
+  }.bind(this);
 };
 
 
@@ -3230,9 +3233,13 @@ bitex.app.BlinkTrade.prototype.onInstantFiatDeposit_ = function(e){
       model.get('Broker')['BrokerID'] +  '_' + model.get('UserID')  + '_' + portfolio_currency;
   var portfolio_position_model_key = 'Portfolio_Position_' +
       model.get('Broker')['BrokerID'] +  '_' + model.get('UserID')  + '_' + portfolio_currency;
-  var gross_limit_credit_formula = '(('+portfolio_balance_model_key + ' + ' + portfolio_position_model_key + ' ) * 3)';
+
+  var gross_limit_credit_formula = '(((' +portfolio_balance_model_key +
+      ' + ' + portfolio_position_model_key + ' ) * 3) + ' + portfolio_position_model_key + ') ';
   var limit_credit_percent_fees_formula = '(' +  gross_limit_credit_formula + ' - ' + deposit_data['FixedFee']
       + ') * (' + deposit_data['PercentFee']/100.0 + ') ';
+
+
   var formula = '(' + gross_limit_credit_formula
       + ' - ( ' + deposit_data['FixedFee'] + ' + ' + limit_credit_percent_fees_formula + ' ) ) / 100000000';
 
@@ -3246,10 +3253,8 @@ bitex.app.BlinkTrade.prototype.onInstantFiatDeposit_ = function(e){
   var total_fees = parseInt(total_percent_fee_value + deposit_data['FixedFee'],10);
   var net_value = (deposit_data['Value'] - total_fees) / 1e8;
 
-  //var formatted_net_value = this.formatCurrency(net_value, deposit_data['Currency'], true);
-
   /**
-   * @desc Crypto Currency Withdraw deposit title
+   * @desc Pre approval deposit dialog
    */
   var MSG_SHOW_DEPOSIT_PRE_APPROVE_DIALOG_TITLE = goog.getMsg("Deposit pre approval");
 
