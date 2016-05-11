@@ -51,7 +51,7 @@ remittance_box: "{
 
 symbol: "BTCBRL"
 
-languages: ["en_US"]
+languages: ["pt_BR", "en_US", "es", "ro", "zn_CN", "vi"]
 
 video : 'true'
 navbar: 'navbar-default'
