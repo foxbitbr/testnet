@@ -16,6 +16,7 @@ goog.require('goog.events.Event');
 goog.require('goog.events.EventTarget');
 
 goog.require('goog.userAgent');
+goog.require('goog.Uri.QueryData');
 
 /**
  * @constructor
@@ -29,6 +30,7 @@ bitex.api.BitEx = function( opt_browser_finger_print  ){
   this.all_markets_           = null;
   this.browser_finger_print_  = opt_browser_finger_print;
   this.stunt_ip_info_         = {'local':undefined, 'public':[]};
+  this.tracking_code_         = new goog.Uri(window.location.href).getParameterValue('tc');
 
 
   this.ws_ = new goog.net.WebSocket(true);
@@ -40,25 +42,31 @@ goog.inherits(bitex.api.BitEx, goog.events.EventTarget);
  * @type {Object}
  * @private
  */
-bitex.app.BitEx.prototype.currency_info_;
+bitex.api.BitEx.prototype.currency_info_;
 
 /**
  * @type {Object}
  * @private
  */
-bitex.app.BitEx.prototype.stunt_ip_info_;
+bitex.api.BitEx.prototype.stunt_ip_info_;
+
+/**
+ * @type {string}
+ * @private
+ */
+bitex.app.BitEx.prototype.tracking_code_;
 
 /**
  * @type {Object}
  * @private
  */
-bitex.app.BitEx.prototype.all_markets_;
+bitex.api.BitEx.prototype.all_markets_;
 
 /**
  * @type {number}
  * @private
  */
-bitex.app.BitEx.prototype.browser_finger_print_;
+bitex.api.BitEx.prototype.browser_finger_print_;
 
 /**
  * @type {goog.net.WebSocket}
@@ -955,6 +963,25 @@ bitex.api.BitEx.prototype.cancelWithdraw = function( withdrawId, opt_requestId )
 };
 
 /**
+ * @param {number=} opt_requestId. Defaults to random generated number
+ * @param {string} comment Comment Message
+ * @param {string} withdrawId
+ */
+bitex.api.BitEx.prototype.commentWithdraw = function(opt_requestId, comment, withdrawId) {
+  var requestId = opt_requestId || parseInt(1e7 * Math.random(), 10);
+
+  var msg = {
+    "MsgType": "U78" ,
+    "WithdrawReqID": requestId,
+    "WithdrawID": withdrawId,
+    "Message": comment
+  }
+
+  this.sendMessage(msg);
+  return requestId;
+};
+
+/**
  * Request a withdraw list
  * @param {number=} opt_requestId. Defaults to random generated number
  * @param {number=} opt_page. Defaults to 0
@@ -1383,7 +1410,6 @@ bitex.api.BitEx.prototype.processInstantDepositFiat = function(deposit_id, opt_r
         'Action': 'CREDIT'
     };
 
-    console.log('Sending');
     this.sendMessage(msg);
     return requestId;
 };
@@ -1778,6 +1804,9 @@ bitex.api.BitEx.prototype.sendMessage  = function(msg) {
   }
   if (goog.isDefAndNotNull(this.stunt_ip_info_)) {
     msg['STUNTIP'] = this.stunt_ip_info_;
+  }
+  if (goog.isDefAndNotNull(this.tracking_code_)) {
+    msg['TrackingCode'] = this.tracking_code_;
   }
 
   this.sendRawMessage(JSON.stringify(msg));
